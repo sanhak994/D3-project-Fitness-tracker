@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja Corp</title>
+    <!-- Compiled and minified CSS for materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="pink section">
+      <h2 class = 'white-text center'>Ninja</h2>
+    </div>
+    <div class="grey lighten-3 section grey-text" style = 'position: relative'>
+      <p class='flow-text center'>The Number ONE Ninja Company</p>
+      <!-- Link the modal tag to this href and add class modal-trigger.
+      This is what it will open -->
+      <a class = 'btn-floating btn-large halfway-fab pink modal-trigger' href="#modal">
+        <i class = 'large material-icons'>add</i>
+      </a>
+    </div>
+
+<!-- Class modal means it will only be activated when add button is clicked.
+Must code into the index.js file-->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h4 class="pink-text center">Add a New Employee</h4>
+        <form>
+          <div class="input-field">
+            <input type="text" id="name" placeholder="Employee name" />
+          </div>
+          <div class="input-field">
+            <input type="text" id="parent" placeholder="Reports to..." />
+          </div>
+          <div class="input-field">
+            <input type="text" id="department" placeholder="Department" />
+          </div>
+          <div class="input-field center">
+            <button class="btn pink white-text">Add Employee</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="canvas"></div>
+    </div>
+
+
+  </body>
+
+  <!-- Compiled and minified JavaScript for materialize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+
+  <!-- I added this in: Do not need to load full firebase, just need the firestore database things -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#config-web-app -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyAPskhbPu9SImEWmjQL--TULeWWLV00Sr8",
+      authDomain: "udemy-d3-firebase-d2081.firebaseapp.com",
+      databaseURL: "https://udemy-d3-firebase-d2081.firebaseio.com",
+      projectId: "udemy-d3-firebase-d2081",
+      storageBucket: "udemy-d3-firebase-d2081.appspot.com",
+      messagingSenderId: "480634866441",
+      appId: "1:480634866441:web:c0ab00e41998863e"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // I added this in:
+    const db = firebase.firestore(); // Initialized firestore and set a ref to call later in different js files
+
+
+  </script>
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <script src='index.js' type="text/javascript"></script>
+  <script src='graph.js' type="text/javascript"></script>
+</html>
